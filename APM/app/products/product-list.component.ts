@@ -43,7 +43,7 @@ export class ProductListComponent implements OnInit {
     }];
 
     constructor() {
-        this.listFilter = 'Saw';
+        this.listFilter = '';
         this.filteredProducts = this.performFilter(this.listFilter);
     }
 
@@ -53,6 +53,10 @@ export class ProductListComponent implements OnInit {
 
     ngOnInit(): void {
         console.log('In OnInit');
+    }
+
+    onRatingClicked(message: string): void {
+        this.pageTitle = 'Product List: ' + message;
     }
 
     performFilter(filterBy: string): IProduct[] {
